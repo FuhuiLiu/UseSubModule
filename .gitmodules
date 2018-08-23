@@ -1,0 +1,3 @@
+[submodule "AqLibs"]
+	path = AqLibs
+	url = git@github.com:FuhuiLiu/AqLibs.git
