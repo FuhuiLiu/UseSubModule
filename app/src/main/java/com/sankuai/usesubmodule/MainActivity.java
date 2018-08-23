@@ -10,6 +10,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.aqLibs.common.Encrypt.GZIPUtils;
+import com.aqLibs.common.Hex;
+
+import java.io.IOException;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
 
 //                Log.d("aq", "MyMath.add(1,222):" + MyMath.add(1,222));
 //                Log.d("aq", "MyMath.mod(1,222):" + MyMath.mod(1,222));
+                try {
+                    byte[] compress = GZIPUtils.compress("123");
+                    String s = Hex.toHex(compress);
+                    Log.d("aq", "compress(123):" + s);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
